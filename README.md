@@ -1,13 +1,6 @@
-> [!WARNING]
-> This README is a template for new Platform Extensions.
-> Notes in this format are instructions for you, the author, and must be deleted before the project is complete.
+# Dynamic Module Availability
 
-# Example
-
-> [!WARNING]
-> This is a high-level summary of the functionality this extension provides.
-
-This extension provides the ability for Brightspot to print the words "Hello World" to the log when certain records are saved.
+This extension, Dynamic Module Availability, empowers administrators within Brightspot to configure, on a per-site basis, a curated list of modules accessible for each content type, seamlessly organizing them into distinct style groups for enhanced customization.
 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
@@ -20,25 +13,20 @@ This extension provides the ability for Brightspot to print the words "Hello Wor
 
 ## Prerequisites
 
-> [!WARNING]
-> This section should list any prerequisites that must be met before the extension can be installed or used. 
-> If a specific version of Brightspot is needed, it should be listed here.
-> If any external APIs are used (AWS, GCP, or any other third party service), they should be listed here.
-
-This extension requires an instance of [Brightspot](https://www.brightspot.com/) and access to the project source code.
+This extension requires an instance of [Brightspot](https://www.brightspot.com/) (version 4.5.15 or later) and access to the project source code.
 
 ## Installation
 
 Gradle:
 ```groovy
-api 'com.brightspot:platform-extension-example:1.0.0'
+api 'com.brightspot:dynamic-module-availability:1.0.0'
 ```
 
 Maven:
 ```xml
 <dependency>
     <groupId>com.brightspot</groupId>
-    <artifactId>platform-extension-example</artifactId>
+    <artifactId>dynamic-module-availability</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -47,19 +35,17 @@ Substitute `1.0.0` for the desired version found on the [releases](/releases) li
 
 ## Usage
 
-> [!WARNING]
-> This section describes how a developer would use this extension in their project.
-> It should include code samples, if applicable, as well as a link to the end user documentation. 
-
-To opt in to this behavior, implement the `SaysHelloWorld` interface on your content type:
+To opt in to this behavior, replace the `StyleEmbeddedContentCreator` class in any `@ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)` annotations with the new content creator class `StyleGroupEmbeddedContentCreator`:
 
 ```java
-public class MyContentType extends Content implements SaysHelloWorld {
-    // ...
+public class MyContentType extends Content {
+
+    @ToolUi.EmbeddedContentCreatorClass(StyleGroupEmbeddedContentCreator.class)
+    private List<ModuleType> contents;
 }
 ```
 
-Now, when a `MyContentType` record is saved, the words "Hello World" will be printed to the log.
+Now, while editing the contents field on `MyContentType`, users will encounter the innovative Embedded Content Creator, revealing only the modules configured in the respective sites and settings.
 
 ## Documentation
 
@@ -97,7 +83,7 @@ Then, add the following to your project's `build.gradle` file:
 
 ```groovy
 dependencies {
-    api 'com.brightspot:platform-extension-example:1.0.0-SNAPSHOT'
+    api 'com.brightspot:dynamic-module-availability:1.0.0-SNAPSHOT'
 }
 ```
 
