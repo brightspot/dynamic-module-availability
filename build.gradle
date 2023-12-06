@@ -14,5 +14,7 @@ dependencies {
     api 'com.psddev:cms-db'
     api 'com.psddev:dari-db'
     api 'com.psddev:dari-util'
+    api 'com.brightspot.go:lib-util-curated-style-group'
+    api 'com.brightspot.go:lib-model-module'
     api 'org.slf4j:slf4j-api'
 }
