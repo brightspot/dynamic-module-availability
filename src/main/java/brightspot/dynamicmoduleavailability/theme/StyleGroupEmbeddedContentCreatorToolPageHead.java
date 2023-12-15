@@ -9,7 +9,7 @@ import com.psddev.dari.util.Cdn;
 /**
  * Provides script and style dependencies for {@link StyleGroupEmbeddedContentCreator} functionality.
  * Executed by {@link ToolPageContext#writeHeader()} to add
- * additional elements to the <head> of Tool pages.
+ * additional elements to the head of Tool pages.
  */
 public class StyleGroupEmbeddedContentCreatorToolPageHead implements ToolPageHead {
 
