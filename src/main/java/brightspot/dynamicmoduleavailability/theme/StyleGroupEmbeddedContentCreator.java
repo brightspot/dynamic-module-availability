@@ -61,6 +61,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import static com.psddev.cms.ui.Components.*;
 
+/**
+ * Custom implementation of {@link com.psddev.theme.StyleEmbeddedContentCreator} that introduces
+ * dynamic modules based on content type and style grouping by module type.
+ */
 public class StyleGroupEmbeddedContentCreator implements EmbeddedContentCreator {
 
     private static final String TEMPLATE_MODULE_TYPE_PARAMETER = "templateModuleType";
