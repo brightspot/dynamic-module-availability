@@ -19,6 +19,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nonnull;
 
 import brightspot.theme.CuratedStyleGroup;
+import brightspot.theme.CuratedStyleGroupModification;
 import brightspot.theme.StyleGroupSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -30,7 +31,6 @@ import com.psddev.cms.db.EmbeddedContentCreator;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUserRecentlyUsed;
-import com.psddev.cms.theme.CuratedStyleGroupModification;
 import com.psddev.cms.tool.ToolPageContext;
 import com.psddev.cms.tool.page.AddEmbeddedContent;
 import com.psddev.cms.tool.page.content.Field;
@@ -59,7 +59,16 @@ import com.psddev.theme.StyleGroupObject;
 import com.psddev.theme.StyleGroupProvider;
 import org.apache.commons.lang3.StringUtils;
 
-import static com.psddev.cms.ui.Components.*;
+import static com.psddev.cms.ui.Components.A;
+import static com.psddev.cms.ui.Components.DIV;
+import static com.psddev.cms.ui.Components.H1;
+import static com.psddev.cms.ui.Components.H2;
+import static com.psddev.cms.ui.Components.IMG;
+import static com.psddev.cms.ui.Components.INPUT;
+import static com.psddev.cms.ui.Components.LABEL;
+import static com.psddev.cms.ui.Components.LI;
+import static com.psddev.cms.ui.Components.SPAN;
+import static com.psddev.cms.ui.Components.UL;
 
 /**
  * Custom implementation of {@link com.psddev.theme.StyleEmbeddedContentCreator} that introduces
