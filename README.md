@@ -47,6 +47,40 @@ public class MyContentType extends Content {
 
 Now, while editing the contents field on `MyContentType`, users will encounter the innovative Embedded Content Creator, revealing only the modules configured in the respective sites and settings.
 
+#### <em>Optionally</em>
+
+If you want to restrict the types that are available in the `CuratedStyleGroup`, implement `CuratedStyleGroupTypesProvider`
+on a new concrete class and define the `ObjectType` internal names.
+
+Example:
+```java
+package brightspot.theme;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import brightspot.genericpage.GenericPage;
+import brightspot.homepage.Homepage;
+import com.psddev.dari.db.ObjectType;
+import com.psddev.dari.db.Record;
+
+public class ProjectCuratedStyleGroupTypesProvider implements CuratedStyleGroupTypesProvider {
+
+    private static final List<Class<? extends Record>> CURATED_TYPES = Arrays.asList(
+            GenericPage.class,
+            Homepage.class);
+
+    @Override
+    public List<String> getCuratedStyleGroupTypes() {
+        return CURATED_TYPES.stream()
+                .map(ObjectType::getInstance)
+                .map(ObjectType::getInternalName)
+                .collect(Collectors.toList());
+    }
+}
+```
+
 ## Documentation
 
 - [Javadocs](https://artifactory.psdops.com/public/com/brightspot/platform-extension-example/%5BRELEASE%5D/platform-extension-example-%5BRELEASE%5D-javadoc.jar!/index.html)
