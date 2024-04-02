@@ -49,7 +49,7 @@ Now, while editing the contents field on `MyContentType`, users will encounter t
 
 ## Documentation
 
-- [Javadocs](https://artifactory.psdops.com/public/com/brightspot/platform-extension-example/%5BRELEASE%5D/platform-extension-example-%5BRELEASE%5D-javadoc.jar!/index.html)
+- [Javadocs](https://artifactory.psdops.com/public/com/brightspot/dynamic-module-availability/1.0.0-SNAPSHOT/dynamic-module-availability-1.0.0-20240122.204603-6-javadoc.jar!/index.html)
 
 ## Versioning
 
