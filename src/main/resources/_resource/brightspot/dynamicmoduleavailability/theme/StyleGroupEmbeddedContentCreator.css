@@ -1,0 +1,76 @@
+ul.StyleEmbeddedContent-subnav {
+  display: none;
+}
+
+.StyleEmbeddedContent-subnav li {
+  padding-left: var(--gap-s);
+}
+
+ul.StyleEmbeddedContent-subnav.open {
+  display: block;
+}
+
+ul.StyleEmbeddedContent-subnav.open li {
+  border: 0;
+}
+
+.StyleEmbeddedContent-nav li.open:hover:after {
+  display: none;
+}
+
+.StyleEmbeddedContent-nav li.open:after {
+  display: none;
+}
+
+.StyleEmbeddedContent-nav li div {
+  color: var(--Link-color);
+  display: block;
+  padding: var(--gap-m) 0;
+  width: 100%;
+}
+
+div.StyleEmbeddedContent-subnav-header .subnav-icon:after {
+  content: "arrow_drop_down";
+  font-family: 'Material Icons';
+  float: right;
+  display: inline-block;
+  font-feature-settings: "liga";
+  font-size: var(--Icon-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  vertical-align: top;
+  white-space: nowrap;
+  word-wrap: normal;
+  pointer-events: none;
+  transition: transform var(--time-xs);
+  color: var(--Link-color);
+}
+
+div.StyleEmbeddedContent-subnav-header.open .subnav-icon:after {
+  transform: rotate(-180deg);
+}
+
+.StyleEmbeddedContent-nav .StyleEmbeddedContent-search .SearchInput input {
+  margin-bottom: var(--gap-m);
+}
+
+.LinkTable-bottom {
+  border-bottom: 1px solid #DCDDDF;
+  margin-bottom: var(--gap-m);
+}
+
+.Grid-modified {
+  display: flex;
+  flex-direction: column;
+}
+
+.Shared-divider {
+  border-top: 1px solid #DCDDDF;
+  height:20px;
+  margin-top:20px;
+}
