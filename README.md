@@ -83,7 +83,7 @@ public class ProjectCuratedStyleGroupTypesProvider implements CuratedStyleGroupT
 
 ## Documentation
 
-- [Javadocs](https://artifactory.psdops.com/public/com/brightspot/platform-extension-example/%5BRELEASE%5D/platform-extension-example-%5BRELEASE%5D-javadoc.jar!/index.html)
+- [Javadocs](https://artifactory.psdops.com/public/com/brightspot/dynamic-module-availability/%5BRELEASE%5D/dynamic-module-availability-%5BRELEASE%5D-javadoc.jar!/index.html)
 
 ## Versioning
 
